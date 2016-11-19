@@ -34,15 +34,36 @@ css 的内容 三种形式
     </style>
     <link>    外部文件
 
-元素标签加 id 或 class 进行区分
-    id-h1-logo  id的格式
-    gua-title   class的格式
+    元素标签加 id 或 class 进行区分    
 
-页面布局
+    id-h1-logo  id的格式    
+    gua-title   class的格式    
+
+    页面布局   
+
     1\. 盒模型  margin / padding / border / content
     2\. inline / block / inline-block
     3\. flex
     4\. float
+
+    样式优先级
+        !important
+        内联
+        <style>
+        <link>
+
+    选择器优先级
+        !important
+        内联
+        id
+        class
+        元素
+
+    元素定位
+        static
+        relative
+        absolute
+        fixed
 
     利用flex形成的简单三栏布局
     ```
@@ -92,3 +113,18 @@ css 的内容 三种形式
         </body>
     </html>
 ```
+
+javascript
+    调试函数
+        var log = function() {
+            console.log.apply(console, arguments)
+        }
+
+    if ... else ...
+    逻辑操作，比较运算
+        && ，|| ， ！
+        ===， ！==， 等
+    函数返回值
+        return
+    标准库
+        Math 等
