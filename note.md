@@ -39,10 +39,10 @@ css 的内容 三种形式
     gua-title   class的格式
 
 页面布局
-    1. 盒模型  margin / padding / border / content
-    2. inline / block / inline-block
-    3. flex
-    4. float
+    1\. 盒模型  margin / padding / border / content
+    2\. inline / block / inline-block
+    3\. flex
+    4\. float
 
     利用flex形成的简单三栏布局
     ```
