@@ -27,30 +27,32 @@ html 的注释 <!--            -->
 
 css 的内容 三种形式
 
-# <style>
-            h1 {</p>
-<pre><code>        }
-    &lt;/style&gt;
-    &lt;link &gt;    外部文件
+    <style>
+            h1 {
+
+            }
+    </style>
+    <link>    外部文件
 
 元素标签加 id 或 class 进行区分
     id-h1-logo  id的格式
     gua-title   class的格式
 
 页面布局
-    1\. 盒模型  margin / padding / border / content
-    2\. inline / block / inline-block
-    3\. flex
-    4\. float
+    1. 盒模型  margin / padding / border / content
+    2. inline / block / inline-block
+    3. flex
+    4. float
 
     利用flex形成的简单三栏布局
-    &lt;!DOCTYPE html&gt;
-    &lt;html&gt;
-        &lt;head&gt;
-            &lt;meta charset=&quot;utf-8&quot;&gt;
-            &lt;title&gt;三栏布局&lt;/title&gt;
-        &lt;/head&gt;
-        &lt;style media=&quot;screen&quot;&gt;
+    ```
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <title>三栏布局</title>
+        </head>
+        <style media="screen">
             div {
                 outline: 1px dashed red;
             }
@@ -68,25 +70,25 @@ css 的内容 三种形式
     .rightsidebar {
         flex-grow: 1;
     }
-        &lt;/style&gt;
-        &lt;body&gt;
-            &lt;div class=&quot;header&quot;&gt;
+        </style>
+        <body>
+            <div class="header">
                 导航栏
-            &lt;/div&gt;
-            &lt;div class=&quot;container&quot;&gt;
-                &lt;div class=&quot;leftsidebar&quot;&gt;
+            </div>
+            <div class="container">
+                <div class="leftsidebar">
                     左栏
-                &lt;/div&gt;
-                &lt;div class=&quot;content&quot;&gt;
+                </div>
+                <div class="content">
                     内容
-                &lt;/div&gt;
-                &lt;div class=&quot;rightsidebar&quot;&gt;
+                </div>
+                <div class="rightsidebar">
                     右栏
-                &lt;/div&gt;
-            &lt;/div&gt;
-            &lt;div class=&quot;footer&quot;&gt;
+                </div>
+            </div>
+            <div class="footer">
                 低栏
-            &lt;/div&gt;
-        &lt;/body&gt;
-    &lt;/html&gt;
-</code></pre></style>
+            </div>
+        </body>
+    </html>
+```
