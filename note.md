@@ -130,3 +130,22 @@ javascript
         return
     标准库
         Math 等
+
+    array 数组
+        数组中元素的值得类型可以不同
+        a.length 表示数组的长度
+        可以用 a[] 对数组元素进行访问
+        循环访问数组的元素，即是遍历
+        a.push(jkjf) 向数组末尾添加元素
+
+    字符串
+        判断相等或者包含 '==='
+        a.includes('b')
+
+        ES6 中的模板字符串
+            var name = 'gua'
+            var a = `${name}, 你好`
+
+        字符串也可以用下标形式进行访问 s[0]
+
+        字符串切片 s.slice(0, 3)
