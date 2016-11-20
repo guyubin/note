@@ -25,7 +25,9 @@ html 的注释 <!--            -->
             <input type="" value=""> type决定了input标签的形式，value是值
 ```
 
-css 的内容 三种形式
+css 的内容
+
+    三种形式
 
     <style>
             h1 {
