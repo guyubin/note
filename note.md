@@ -67,6 +67,14 @@ css 的内容
         absolute
         fixed
 
+    display 属性
+        block 独占一行
+        inline 可以和别的一行
+        inline-block 可以在一行，并可以设置宽度，高度等
+
+    伪类
+        a:hover
+
     利用flex形成的简单三栏布局
     ```
     <!DOCTYPE html>
@@ -149,3 +157,32 @@ javascript
         字符串也可以用下标形式进行访问 s[0]
 
         字符串切片 s.slice(0, 3)
+
+    测试函数
+        ensure 函数
+        var ensure = function(condition, message) {
+            if (!condition) {
+                console.log(message)
+            }
+        }
+
+        break 终止循环
+        continue 跳过单次循环
+
+    object 对象
+        var taoer = {
+            'name': 'gua',
+            'height': 169,
+        }
+
+        访问
+            taoer['name']
+            taoer.name
+        增加
+            gua['sex'] = 'male'
+        修改
+            gua.name = 'gua'
+        删除
+            delete gua.sex
+
+    递归
