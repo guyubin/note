@@ -186,3 +186,24 @@ javascript
             delete gua.sex
 
     递归
+
+    DOM 操作
+        查询  document.querySelector()
+        获得属性 getAttribute()
+        设置属性 setAttribute()
+        是否有该属性  hasAttribute()
+        删除属性    removeAttribute()
+        获得所有属性 user.attributes
+
+        操作元素
+            创建  document.createElement()
+            添加  appendChild()   form.insertAdjacentHTML('', '')
+            删除  parentElement.removeChild()
+            访问父节点 pwd.parentElement
+            删除自己  pwd.remove()
+
+        事件
+            1.获得元素
+            2.声明函数
+            3.绑定   addEventListener()
+            
