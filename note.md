@@ -169,6 +169,31 @@ javascript
         break 终止循环
         continue 跳过单次循环
 
+    数据类型
+        number
+        string
+        boolean
+        null
+        undefined
+
+        object
+
+        函数也是一个值
+
+        用 typeof 判断类型
+
+        高阶函数 函数作为参数传递
+            var process = function(array, processor) {}
+        函数两种形式
+            函数声明
+                function sum(a, b) {
+                    return a + b
+                }
+            函数表达式
+                var sum = function(a, b) {
+                    return a + b
+                }
+
     object 对象
         var taoer = {
             'name': 'gua',
@@ -206,4 +231,3 @@ javascript
             1.获得元素
             2.声明函数
             3.绑定   addEventListener()
-            
