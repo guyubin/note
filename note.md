@@ -145,6 +145,7 @@ javascript
         可以用 a[] 对数组元素进行访问
         循环访问数组的元素，即是遍历
         a.push(jkjf) 向数组末尾添加元素
+        删除某个元素 array.splice(0,2) // 第一项的位置， 和要删除的项数
 
     字符串
         判断相等或者包含 '==='
@@ -231,3 +232,23 @@ javascript
             1.获得元素
             2.声明函数
             3.绑定   addEventListener()
+
+        事件委托
+            给运行时添加的元素绑定事件，
+
+        存储
+            localStroage
+            localStorage.name 设置属性，即可存储数据
+                              删除， localStorage.removeItem('name')
+                              localStorage 的大小是 5M
+        Json                  
+            数组和对象用string 进行转换时存在缺陷，
+            因此产生了Json 数据格式，对其进行序列化和反序列化
+
+            var s = JSON.stringify([1,2,3,3])
+            JSON.parse(s)
+
+
+Some Tricks
+
+    chrome 有焦点时的蓝色框是outline属性，是 agent user style
