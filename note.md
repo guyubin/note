@@ -252,3 +252,18 @@ javascript
 Some Tricks
 
     chrome 有焦点时的蓝色框是outline属性，是 agent user style
+    在程序中添加一个函数作为程序的单一入口
+        var __main = function() {
+
+        }
+        最后调用该函数
+
+    blur事件的特殊性，不冒泡
+
+    打表 例如
+        var formatWeekDay = function(day) {
+            var weekDay = {
+                '1' : '星期一',
+                '2' : '星期二',
+            }
+        }
