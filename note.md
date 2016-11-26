@@ -236,6 +236,24 @@ javascript
         事件委托
             给运行时添加的元素绑定事件，
 
+        事件捕获和冒泡
+            冒泡为默认的方法 从底层到上层
+            addEventListener 的第三个参数为 true 代表 useCapture 为true
+            同一个目标上 先 冒泡 再 捕获
+
+        Ajax
+            var r = new XMLHttpRequest()
+            r.open('GET', '/login', true) 第三个参数表明是否异步 ， true为异步
+            r.setRequestHeader('Content-Type', 'application/json')
+            r.onreadystatechange = function() {
+                console.log('state change', r)
+            }
+
+            r.send()
+
+            r.readystate = 4 代表收到服务器响应
+
+
         存储
             localStroage
             localStorage.name 设置属性，即可存储数据
@@ -247,6 +265,33 @@ javascript
 
             var s = JSON.stringify([1,2,3,3])
             JSON.parse(s)
+
+
+
+
+HTTP
+        https://movie.douban.com/chart
+        http and https present the protocal
+        movie.douban.com 主机名
+        端口：一般默认80 ，且省略
+        /chart: 路径
+
+        不同电脑主机之间的通信通过IP地址，一般为数字，但是因为数字不好记忆，因此
+        发明了域名，
+        域名与IP地址之间的对应关系，存储在DNS服务器之中
+
+        可以使用 ping 命令查看
+
+        端口是程序的对应接口
+
+        http协议
+            双方都遵循的一种规范格式
+            分为4个部分
+                请求行 响应行 GET /  /..
+                http头
+                /r/n/r/n 作为http头与http body 之间的分割
+                内容
+
 
 
 Some Tricks
