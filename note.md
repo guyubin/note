@@ -324,3 +324,22 @@ Some Tricks
 
     object.keys(obj) 返回给定对象可枚举属性组成的数组
     window.location.href = 'http://www.wrox.com'    改变浏览器当前页面位置
+
+    使用 github 显示 demo 页面
+        创建一个仓库 guyubin.github.io
+        将需要展示的页面直接放入仓库，
+            例如：
+                <!DOCTYPE html>
+                <html>
+                    <head>
+                        <meta charset="utf-8">
+                        <title>HelloWorld</title>
+                    </head>
+                    <body>
+                        HelloWorld
+                    </body>
+                </html>
+            直接新建一个文件 helloworld.html 保存上述 html 代码
+        将 helloworld.html 放入仓库 guyubin.github.io 中
+        在浏览器键入 guyubin.github.io/helloworld.html 即可见demo
+        
