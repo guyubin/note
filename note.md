@@ -211,6 +211,15 @@ javascript
         删除
             delete gua.sex
 
+    面向对象
+        var Student = function(name, height) {
+            this.name = name
+            this.height = height
+        }
+        var s1 = new Student()
+
+        Student.prototype.... = 原型方法
+
     递归
 
     DOM 操作
@@ -312,3 +321,6 @@ Some Tricks
                 '2' : '星期二',
             }
         }
+
+    object.keys(obj) 返回给定对象可枚举属性组成的数组
+    window.location.href = 'http://www.wrox.com'    改变浏览器当前页面位置
