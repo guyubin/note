@@ -146,6 +146,9 @@ javascript
         循环访问数组的元素，即是遍历
         a.push(jkjf) 向数组末尾添加元素
         删除某个元素 array.splice(0,2) // 第一项的位置， 和要删除的项数
+        将一个数组整体一次性 push 进另一个数组中
+            a.concat(arr)
+            b.push.apply(b, a)
 
     字符串
         判断相等或者包含 '==='
@@ -158,6 +161,10 @@ javascript
         字符串也可以用下标形式进行访问 s[0]
 
         字符串切片 s.slice(0, 3)
+
+    编码
+        encodeURIComponent() // 编码
+        decodeURIComponent() // 解码
 
     测试函数
         ensure 函数
@@ -275,8 +282,62 @@ javascript
             var s = JSON.stringify([1,2,3,3])
             JSON.parse(s)
 
-
-
+        jQuery
+            a. 选择器
+                1. $
+                2. find   例如：$("#orderedlist).find("li")
+                3. siblings
+                4. closest, parent
+                $('body')
+                $('#id-button-add')
+                $('.cell')
+            b. dom操作
+                1. append
+                2. remove
+                3. empty // 与 remove 的区别在于 remove 删除整个元素，而 empty 删除选中内部的全部
+                4. show hide toggle
+            c. class 操作
+                1. addClass removeClass
+                2. toggleClass
+            d. 属性、特性操作
+                1. attr prop data
+                2. removeAttr
+            e. 取值
+                1. val  // 取input 的值
+                2. text // 只取文本，忽略标签
+                3. html // 相当于innerHTML
+            f. 事件
+                1. on 相当于 addEventListener
+                    $('.delete-button').on('click', function(event) {
+                            var button = $(event.target)
+                            button.closest('.todo-cell').remove()
+                        })
+                    事件委托
+                    $('#id-div-todo').on('click', '.delete-button', function(){})
+                        第二个参数是事件委托的对象
+                    事件冒泡 阻止
+                    $('span').bind("click",function(event){
+                        var txt = $('#msg').html() + "<p>内层span元素被点击.<p/>";
+                        $('#msg').html(txt);
+                        event.stopPropagation();    //  阻止事件冒泡
+                    });
+                2. change
+                3. event.target
+            g. 数组方法
+                1. each
+                    (index, value)
+                2. map
+                    相当于以前的process
+                3. grep
+                    相当于以前的filter
+            h. ajax
+                $.ajax({
+                    url: ,
+                    type: 'get',
+                    contentType: 'application/json',
+                    success:
+                    error:
+                    })
 
 HTTP
         https://movie.douban.com/chart
@@ -342,4 +403,3 @@ Some Tricks
             直接新建一个文件 helloworld.html 保存上述 html 代码
         将 helloworld.html 放入仓库 guyubin.github.io 中
         在浏览器键入 guyubin.github.io/helloworld.html 即可见demo
-        
