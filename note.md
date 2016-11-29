@@ -282,6 +282,10 @@ javascript
             var s = JSON.stringify([1,2,3,3])
             JSON.parse(s)
 
+        data属性
+            dom: domDiv.dataset.<id>
+            jquery: jqdiv.data('id')
+
         jQuery
             a. 选择器
                 1. $
@@ -339,6 +343,8 @@ javascript
                     error:
                     })
 
+            $('document').ready(function(){}) // 加载完立即执行
+
 HTTP
         https://movie.douban.com/chart
         http and https present the protocal
@@ -385,6 +391,8 @@ Some Tricks
 
     object.keys(obj) 返回给定对象可枚举属性组成的数组
     window.location.href = 'http://www.wrox.com'    改变浏览器当前页面位置
+
+    给 style 加上 class， 可以在删除元素时，一起删除与其绑定在一起的 style
 
     使用 github 显示 demo 页面
         创建一个仓库 guyubin.github.io
