@@ -64,7 +64,7 @@ css 的内容
     元素定位
         static
         relative
-        absolute
+        absolute    // 会寻找父元素中最近的一个非 static 元素进行定位
         fixed
 
     display 属性
@@ -74,6 +74,10 @@ css 的内容
 
     伪类
         a:hover
+
+    调试
+        可以添加以下语句使得调试更加直观
+            div {outline: 1px solid red;}
 
     利用flex形成的简单三栏布局
     ```
@@ -129,6 +133,10 @@ javascript
         var log = function() {
             console.log.apply(console, arguments)
         }
+        一些调试技巧
+            所谓的“穿衣服”
+            使用模板字符串给需要 log 的变量加个套
+            console.log(`(${x})`)
 
     if ... else ...
     逻辑操作，比较运算
@@ -227,6 +235,23 @@ javascript
 
         Student.prototype.... = 原型方法
 
+    关于动态绑定 this 的一点东西
+        this 执行动态绑定，但是可以使用 bind apply call 绑定到指定的对象上
+            bind：
+                var o = {
+                    foo : 1,
+                    bar : function() {
+                        return this.foo
+                    },
+                }
+                o.bar() // 1
+                var b = o.bar.bind(o)
+                b() // 1
+            apply:
+                log 函数
+            call
+                和 apply 近似，就是 apply 具有解包的能力，而 call 不具备
+
     递归
 
     DOM 操作
@@ -286,6 +311,39 @@ javascript
             dom: domDiv.dataset.<id>
             jquery: jqdiv.data('id')
 
+        ES6
+            let 快作用域的 var
+            const 不能修改的常量
+                const = 1
+                const arr = [1,2]
+                arr.push(3)
+            set 集合 类似数组 无重复元素
+                var s = new Set()
+                s.add()
+                s.size
+                s.delete()
+                s.has()
+            Map
+                var m = new Map()
+                m.set('name', 'gua')
+                m.get('name')
+            ... 扩展符号
+                var a1 = [1,2,3]
+                var a2 = [...a1, 4] === [1,2,3,4]
+            解包
+                var [a,b] = [b,a]
+            函数默认参数
+                var foo = function(a, name = 'gua') {
+                    log(a, name)
+                }
+            箭头函数
+                匿名函数的简化
+                this 是完全绑定了的
+                没有 arguments 对象
+                (参数1，参数2) => {语句}
+            新增函数
+                includes
+
         jQuery
             a. 选择器
                 1. $
@@ -314,7 +372,7 @@ javascript
                 1. on 相当于 addEventListener
                     $('.delete-button').on('click', function(event) {
                             var button = $(event.target)
-                            button.closest('.todo-cell').remove()
+                        button.closest('.todo-cell').remove()
                         })
                     事件委托
                     $('#id-div-todo').on('click', '.delete-button', function(){})
@@ -411,3 +469,7 @@ Some Tricks
             直接新建一个文件 helloworld.html 保存上述 html 代码
         将 helloworld.html 放入仓库 guyubin.github.io 中
         在浏览器键入 guyubin.github.io/helloworld.html 即可见demo
+
+    DOM 操作上的 trick
+        input checked 复选框 被选中项的 prop 属性值为 true
+        prop('checked') === true    
