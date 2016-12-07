@@ -25,6 +25,25 @@ html 的注释 <!--            -->
             <input type="" value=""> type决定了input标签的形式，value是值
 ```
 
+    html5
+        语义化
+            nav header ...
+            自定义的标签
+                <gua></gua>
+            <video>
+            <audio>
+            配套的 js API
+                video 全屏 API
+                    requstFullScreen()
+
+        localStroage sessionStorage
+            前者永久保存
+            后者关闭页面时消失
+
+        html5 中属性没有空格时可以不添加引号
+            属性为 boolean 值时 写了就是 true 无论给属性赋上什么值
+            消除属性效果只能删除属性，使用 removeAttribute('checked')
+
 css 的内容
 
     三种形式
@@ -402,6 +421,7 @@ javascript
                     })
 
             $('document').ready(function(){}) // 加载完立即执行
+                与 $(function()) 等价
 
 HTTP
         https://movie.douban.com/chart
