@@ -44,6 +44,14 @@ html 的注释 <!--            -->
             属性为 boolean 值时 写了就是 true 无论给属性赋上什么值
             消除属性效果只能删除属性，使用 removeAttribute('checked')
 
+        canvas 标签
+            画布 做游戏 相关的库 particle.js phaser.js
+
+        移动端网页
+            设置 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0 user-scalable=no">
+
+
+
 css 的内容
 
     三种形式
@@ -146,6 +154,14 @@ css 的内容
         </body>
     </html>
 ```
+
+    媒体查询
+        用来做响应式页面设计
+        @media all and (min-width: 200px) and (max-width: 300px) {
+            body {
+                background: red;
+            }
+        }
 
 javascript
     调试函数
@@ -272,6 +288,52 @@ javascript
                 和 apply 近似，就是 apply 具有解包的能力，而 call 不具备
 
     递归
+
+    BOM
+        BOM 是什么
+            是获取浏览器信息和操控浏览器的 API
+
+        location
+            管理 URL
+            location.href 可以设置当前页面
+            location.reload 刷新
+            http://music.163.com/#/my/m/music/playlist?id=37230882
+            hash : "#/my/m/music/playlist?id=37230882"
+            host : "music.163.com" （域名 + 端口）
+            hostname : "music.163.com" （域名）
+            pathname : "/"
+            search : ""
+            href : "http://music.163.com/#/my/m/music/playlist?id=37230882"
+
+        navigator
+            navigator.userAgent 得到浏览器信息
+            navigator.platform
+
+        history
+            处理历史记录
+            html5 中的新增 API 使得其可以作为单页面应用的实现手段的一部分
+
+            history.length URL的数量
+            history.back()
+            history.forward()
+            history.go(-2)
+
+            history.pushState(null, 'title', '/profile')
+                自定义对象，新页面标题，新页面的地址
+
+                var state = {
+                    page: "settings"
+                }
+                history.pushState(state, "settings", "/settings")
+
+                用户点击前进，后退时，会触发window 的 popstate 事件
+
+                window.addEventListener('popstate', function(event) {
+                    var state = event.state
+                    console.log('pop state', state)    
+                })
+
+                只能在相同的域下使用
 
     DOM 操作
         查询  document.querySelector()
