@@ -508,7 +508,16 @@ HTTP
                 /r/n/r/n 作为http头与http body 之间的分割
                 内容
 
+后端
 
+    Node.js
+        剥除了浏览器渲染的JavaScript引擎
+    Express
+        后端框架，编写后端程序，在Node上运行
+        例子就是文件 express_demo.js
+        可以监听端口，返回响应等等
+    Electron
+        用JavaScript写本地应用的框架程序
 
 Some Tricks
 
