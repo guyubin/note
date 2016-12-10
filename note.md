@@ -81,6 +81,9 @@ css 的内容
         <style>
         <link>
 
+    选择器
+        一些不常用的选择器可以查阅阮一峰的博客
+
     选择器优先级
         !important
         内联
@@ -516,6 +519,8 @@ HTTP
         后端框架，编写后端程序，在Node上运行
         例子就是文件 express_demo.js
         可以监听端口，返回响应等等
+        express bodyparser 有许多的坑要注意，
+            app.use(bodyParser.json())
     Electron
         用JavaScript写本地应用的框架程序
 
@@ -564,3 +569,6 @@ Some Tricks
     DOM 操作上的 trick
         input checked 复选框 被选中项的 prop 属性值为 true
         prop('checked') === true    
+
+    域名问题
+        如果需要买域名可以去qcloud上买个.cc的域名
