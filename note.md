@@ -488,6 +488,33 @@ javascript
             $('document').ready(function(){}) // 加载完立即执行
                 与 $(function()) 等价
 
+        RequireJS
+            RequireJS 主要是为了模块加载设计的小巧的框架
+                1.防止js加载阻塞页面渲染
+                2.程序调用方式加载，避免一堆的<script>挤在一起
+            使用
+                引入 require.js
+                再写入 require(['a'])
+            API
+                define      定义一个模块
+                require     加载模块，执行加载完成后的调用函数
+
+                    require(['a'], function() {
+                        alert('it works')
+                    })
+
+                requirejs   === require
+
+                将所有的依赖模块统一写在main.js中，较为优雅直观
+                因此require 有了主数据的功能
+                <script data-main="js/main" src="js/require.js"></script>
+                这个属性指定的 js 文件，将在 require.js 加载完后处理
+
+                第三方模块的加载
+                    符合AMD的直接加载即可，
+                    如果不符合的，要用到 shim
+
+
 HTTP
         https://movie.douban.com/chart
         http and https present the protocal
@@ -568,7 +595,9 @@ Some Tricks
 
     DOM 操作上的 trick
         input checked 复选框 被选中项的 prop 属性值为 true
-        prop('checked') === true    
+        prop('checked') === true
+        双向绑定
+            对象属性发生变化时，能够改变对应的UI，反过来也是
 
     域名问题
         如果需要买域名可以去qcloud上买个.cc的域名
