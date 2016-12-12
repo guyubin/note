@@ -548,6 +548,177 @@ HTTP
         可以监听端口，返回响应等等
         express bodyparser 有许多的坑要注意，
             app.use(bodyParser.json())
+
+        express 的后端代码
+        ```
+        var fs = require('fs')
+        var express = require('express')
+        var bodyParser = require('body-parser')
+        var app = express()
+        // 引入 express 并且创建一个 express 实例，赋值给 app
+        app.use(bodyParser.json())
+
+
+
+        var sendHtml = function(path, response) {
+            var options = {
+                encoding : 'utf-8'
+            }
+            fs.readFile(path, options, function(err, data) {
+                response.send(data);
+            })
+        }
+        // 用 get 定义一个给用户访问的网址
+        app.get('/', function(req, res) {
+            var path = 'index.html'
+            sendHtml(path, res)
+        })// req 是浏览器发送的请求，
+        // res 是服务器发给浏览器的响应
+        // 用 get 定义一个给用户访问的网址
+
+        var todos =
+        [
+            {
+                id : 1,
+                task : "eat"
+            }
+        ]
+
+        var addTodo = function(todo) {
+            var todosLength = todos.length
+            if (todosLength === 0) {
+                todo.id = 1
+            } else {
+                todo.id = todos[todosLength - 1].id + 1
+            }
+
+            todos.push(todo)
+            // var
+        }
+
+        var deleteTodo = function(id) {
+            var index = -1
+            for (var i = 0; i < todos.length; i++) {
+                if (todos[i].id === id) {
+                    index = i
+                    break
+                }
+            }
+            if (index !== -1) {
+                todos.splice(index, 1)
+            }
+        }
+
+        var updateTodo = function(t) {
+            var id = t.id
+            var index = -1
+            for (var i = 0; i < todos.length; i++) {
+                if (todos[i].id === id) {
+                    index = i
+                    break
+                }
+            }
+            if (index !== -1) {
+                todos[index].task = t.task
+            }
+        }
+
+        app.get('/todo/all', function(request, response) {
+            var r = JSON.stringify(todos)
+            response.send(r)
+        })
+
+        // addTodo
+        app.post('/todo/add', function(request, response) {
+            var t = request.body
+            addTodo(t)
+            response.send(JSON.stringify(todos))
+        })
+
+        //delete
+        app.post('/todo/delete', function(request, response) {
+            var t = request.body
+            var id = t.id
+            deleteTodo(Number(id))
+            response.send(JSON.stringify(todos))
+        })
+
+        // updateTodo
+        app.post('/todo/update', function(request, response) {
+            var t = request.body
+            updateTodo(t)
+            response.send(JSON.stringify(todos))
+        })
+
+        // listen 函数的第一个参数是我们要监听的端口
+        // 这个端口是浏览器输入的
+        // 默认端口是80, 所以监听的是80端口， 浏览器就不用输入
+        var server = app.listen(8081, function () {
+
+          var host = server.address().address
+          var port = server.address().port
+
+          console.log("应用实例，访问地址为 http://%s:%s", host, port)
+
+        })
+
+        ```
+        对应的 todo 的前段代码
+        ```
+        <script src="//cdn.bootcss.com/jquery/3.1.1/jquery.js"></script>
+        <script>
+            var ajax = function() {
+                $.ajax({
+                    type : 'get',
+                    url : '/todo/all',
+                    success : function(r) {
+                        console.log(r)
+                    }
+                })
+            }
+
+            var ajaxAdd = function(data) {
+                $.ajax({
+                    type : 'post',
+                    url : '/todo/add',
+                    data : data,
+                    contentType : 'application/json',
+                    success : function(r) {
+                        console.log(r)
+                    }
+                })
+            }
+
+            var ajaxDelete = function(id) {
+                $.ajax({
+                    type : 'post',
+                    url : '/todo/delete',
+                    data : id,
+                    contentType : 'application/json',
+                    success : function(r) {
+                        console.log(r)
+                    }
+                })
+            }
+
+            var ajaxUpdate = function(data) {
+                $.ajax({
+                    type : 'post',
+                    url : '/todo/update',
+                    data : data,
+                    contentType : 'application/json',
+                    success : function(r) {
+                        console.log(r)
+                    }
+                })
+            }
+        </script>
+        <body>
+            <h1>hello gua</h1>
+            <h2>nihao xxxx</h2>
+        </body>
+
+        ```
     Electron
         用JavaScript写本地应用的框架程序
 
